@@ -10,3 +10,11 @@ $ ResolveAlias [alias file]
 
 on success print fliepath on stdout.
 on failture return 1.
+
+# Development
+
+Using swiftlint
+
+```
+$ brew install swiftlint
+```
