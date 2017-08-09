@@ -2,6 +2,13 @@
 
 Resolve file path from alias on Mac
 
+# Install
+
+```
+$ brew tap eiel/resolvealias
+$ brew install resolvealias
+```
+
 # Usage
 
 ```
