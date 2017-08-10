@@ -1,22 +1,21 @@
 import Foundation
 
-func resolveFinderAlias(_ url: URL) -> String? {
+let version = "v0.0.3-beta"
+
+func resolveFinderAlias(_ url: URL) throws -> String? {
 
     var isAliasOfAny: AnyObject?
-    do {
-        try (url as NSURL).getResourceValue(&isAliasOfAny, forKey: URLResourceKey.isAliasFileKey)
-        guard let isAlias = isAliasOfAny as? Bool else {
-            return nil
-        }
+
+    try (url as NSURL).getResourceValue(&isAliasOfAny, forKey: URLResourceKey.isAliasFileKey)
+    switch isAliasOfAny {
+    case let isAlias as Bool:
         if isAlias {
-            do {
-                let original = try URL(resolvingAliasFileAt: url, options: NSURL.BookmarkResolutionOptions())
-                return original.path
-            } catch let error as NSError {
-                print(error)
-            }
+            let original = try URL(resolvingAliasFileAt: url, options: NSURL.BookmarkResolutionOptions())
+            return original.path
         }
-    } catch _ {}
+    default:
+        return nil
+    }
 
     return nil
 }
@@ -32,13 +31,17 @@ class StandardErrorOutputStream: TextOutputStream {
 
 let arguments: [String] = CommandLine.arguments
 
-let filePath = arguments[1]
-let aliasURL = URL(fileURLWithPath: filePath)
+if arguments.count > 1 {
+    let filePath = arguments[1]
+    let aliasURL = URL(fileURLWithPath: filePath)
 
-if let url = resolveFinderAlias(aliasURL) {
-    print(url)
+    if let url = try resolveFinderAlias(aliasURL) {
+        print(url)
+    } else {
+        var standardError = StandardErrorOutputStream()
+        print("Not alias file: \(filePath)", to: &standardError)
+        exit(1)
+    }
 } else {
-    var standardError = StandardErrorOutputStream()
-    print("Not alias file: \(filePath)", to: &standardError)
-    exit(1)
+    print("ResolveAlias, version \(version)\n\nusage: ResolveAlias <file>")
 }
