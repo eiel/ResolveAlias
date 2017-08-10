@@ -3,6 +3,9 @@
 [![Build Status](https://travis-ci.org/eiel/ResolveAlias.svg?branch=master)](https://travis-ci.org/eiel/ResolveAlias)
 [![GitHub release](http://github-release-version.herokuapp.com/github/eiel/ResolveAlias/release.svg?style=flat)](https://github.com/eiel/ResolveAlias/releases/tag/v0.0.2)
 
+[![](https://tokei.rs/b1/github/eiel/ResolveAlias)](https://github.com/eiel/ResolveAlias).
+
+
 # What this?
 
 Resolve file path from alias on Mac
