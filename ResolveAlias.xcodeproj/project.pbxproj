@@ -69,8 +69,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 901D06951CDAEA660070DA9A /* Build configuration list for PBXNativeTarget "ResolveAlias" */;
 			buildPhases = (
-				901D068A1CDAEA660070DA9A /* Sources */,
+				903644531F3D45AB0070EBF4 /* ShellScript */,
 				9062AB101F3A7FD600128A5C /* ShellScript */,
+				901D068A1CDAEA660070DA9A /* Sources */,
 				901D068B1CDAEA660070DA9A /* Frameworks */,
 				901D068C1CDAEA660070DA9A /* CopyFiles */,
 			);
@@ -117,6 +118,19 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		903644531F3D45AB0070EBF4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi";
+		};
 		9062AB101F3A7FD600128A5C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
