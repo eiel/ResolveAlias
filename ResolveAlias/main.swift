@@ -1,6 +1,6 @@
 import Foundation
 
-let version = "v0.0.3-beta"
+let version = "v0.0.3"
 
 func resolveFinderAlias(_ url: URL) throws -> String? {
 
