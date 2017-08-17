@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		901D06921CDAEA660070DA9A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D06911CDAEA660070DA9A /* main.swift */; };
+		906FE1FA1F4578BE005D4B5E /* ResolveAliasTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FE1F91F4578BE005D4B5E /* ResolveAliasTest.swift */; };
+		906FE1FF1F457B0B005D4B5E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D06911CDAEA660070DA9A /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +27,20 @@
 /* Begin PBXFileReference section */
 		901D068E1CDAEA660070DA9A /* ResolveAlias */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ResolveAlias; sourceTree = BUILT_PRODUCTS_DIR; };
 		901D06911CDAEA660070DA9A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		906FE1F71F4578BE005D4B5E /* ResolveAliasTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResolveAliasTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		906FE1F91F4578BE005D4B5E /* ResolveAliasTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolveAliasTest.swift; sourceTree = "<group>"; };
+		906FE1FB1F4578BE005D4B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		901D068B1CDAEA660070DA9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		906FE1F41F4578BE005D4B5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				901D06901CDAEA660070DA9A /* ResolveAlias */,
+				906FE1F81F4578BE005D4B5E /* ResolveAliasTest */,
 				901D068F1CDAEA660070DA9A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				901D068E1CDAEA660070DA9A /* ResolveAlias */,
+				906FE1F71F4578BE005D4B5E /* ResolveAliasTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +74,15 @@
 				901D06911CDAEA660070DA9A /* main.swift */,
 			);
 			path = ResolveAlias;
+			sourceTree = "<group>";
+		};
+		906FE1F81F4578BE005D4B5E /* ResolveAliasTest */ = {
+			isa = PBXGroup;
+			children = (
+				906FE1F91F4578BE005D4B5E /* ResolveAliasTest.swift */,
+				906FE1FB1F4578BE005D4B5E /* Info.plist */,
+			);
+			path = ResolveAliasTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,19 +107,40 @@
 			productReference = 901D068E1CDAEA660070DA9A /* ResolveAlias */;
 			productType = "com.apple.product-type.tool";
 		};
+		906FE1F61F4578BE005D4B5E /* ResolveAliasTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 906FE1FE1F4578BE005D4B5E /* Build configuration list for PBXNativeTarget "ResolveAliasTest" */;
+			buildPhases = (
+				906FE1F31F4578BE005D4B5E /* Sources */,
+				906FE1F41F4578BE005D4B5E /* Frameworks */,
+				906FE1F51F4578BE005D4B5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ResolveAliasTest;
+			productName = ResolveAliasTest;
+			productReference = 906FE1F71F4578BE005D4B5E /* ResolveAliasTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		901D06861CDAEA660070DA9A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = eiel;
 				TargetAttributes = {
 					901D068D1CDAEA660070DA9A = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0830;
+					};
+					906FE1F61F4578BE005D4B5E = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -113,9 +157,20 @@
 			projectRoot = "";
 			targets = (
 				901D068D1CDAEA660070DA9A /* ResolveAlias */,
+				906FE1F61F4578BE005D4B5E /* ResolveAliasTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		906FE1F51F4578BE005D4B5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		903644531F3D45AB0070EBF4 /* ShellScript */ = {
@@ -152,6 +207,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				901D06921CDAEA660070DA9A /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		906FE1F31F4578BE005D4B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				906FE1FF1F457B0B005D4B5E /* main.swift in Sources */,
+				906FE1FA1F4578BE005D4B5E /* ResolveAliasTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +325,37 @@
 			};
 			name = Release;
 		};
+		906FE1FC1F4578BE005D4B5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ResolveAliasTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = info.eiel.ResolveAliasTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		906FE1FD1F4578BE005D4B5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ResolveAliasTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = info.eiel.ResolveAliasTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -281,6 +376,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		906FE1FE1F4578BE005D4B5E /* Build configuration list for PBXNativeTarget "ResolveAliasTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				906FE1FC1F4578BE005D4B5E /* Debug */,
+				906FE1FD1F4578BE005D4B5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
