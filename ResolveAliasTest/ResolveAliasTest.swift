@@ -1,30 +1,30 @@
 import XCTest
 
 class ResolveAliasTest: XCTestCase {
-    
+
+    static let targetFilename = "sample.txt"
+    static let aliasFilename = "sample.txt.alias"
+    static let basedirURL = URL(fileURLWithPath: #file).deletingLastPathComponent()
+    static let resourceDirectoryURL = basedirURL.appendingPathComponent("resources", isDirectory: true)
+    static let targetURL = resourceDirectoryURL.appendingPathComponent(targetFilename)
+    static let aliasURL = resourceDirectoryURL.appendingPathComponent(aliasFilename)
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // Put setup code here. This method is called before the invocation oうf each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testResolveAliasPath() {
-        let file_name = "sample.txt"
-        let alias_name = "sample.txt alias"
-        let url = URL.init(fileURLWithPath: #file)
-        let basedir = url.deletingLastPathComponent()
-        let resource_dir = basedir.appendingPathComponent("resources", isDirectory: true)
-        let alias_url = resource_dir.appendingPathComponent(alias_name)
-        let file_url = resource_dir.appendingPathComponent(file_name)
-        do {
-            let path = try resolveFinderAlias(alias_url)
-            XCTAssert(path == file_url.path)
-        } catch {
-            XCTFail()
-        }
+        // create alias
+        // let alias = try! ResolveAliasTest.targetURL.bookmarkData()
+        // let options = NSURL.BookmarkFileCreationOptions(NSURL.BookmarkCreationOptions.suitableForBookmarkFile.rawValue)
+        // try! NSURL.writeBookmarkData(alias, to: ResolveAliasTest.targetFilename, options: options)
+        let path = try! resolveAliasFile(ResolveAliasTest.aliasURL)
+        XCTAssert(path == ResolveAliasTest.targetURL)
     }
 }

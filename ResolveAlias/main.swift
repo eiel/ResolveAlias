@@ -2,16 +2,16 @@ import Foundation
 
 let version = "v0.0.4-alpha"
 
-func resolveFinderAlias(_ url: URL) throws -> String? {
+func resolveAliasFile(_ url: URL) throws -> URL? {
 
     var isAliasOfAny: AnyObject?
 
     try (url as NSURL).getResourceValue(&isAliasOfAny, forKey: URLResourceKey.isAliasFileKey)
+
     switch isAliasOfAny {
     case let isAlias as Bool:
         if isAlias {
-            let original = try URL(resolvingAliasFileAt: url, options: NSURL.BookmarkResolutionOptions())
-            return original.path
+            return try URL(resolvingAliasFileAt: url, options: NSURL.BookmarkResolutionOptions())
         }
     default:
         return nil
@@ -35,8 +35,8 @@ if arguments.count > 1 {
     let filePath = arguments[1]
     let aliasURL = URL(fileURLWithPath: filePath)
 
-    if let url = try resolveFinderAlias(aliasURL) {
-        print(url)
+    if let resolvepath = try resolveAliasFile(aliasURL)?.path {
+        print(resolvepath)
     } else {
         var standardError = StandardErrorOutputStream()
         print("Not alias file: \(filePath)", to: &standardError)
